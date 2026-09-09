@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>作品集 · Portfolio</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="logo" href="#" data-nav="all">
+      <span class="logo-badge logo-badge-dark">作品</span>
+      <span class="logo-badge logo-badge-yellow">集</span>
+      <span class="logo-text">PORTFOLIO</span>
+    </a>
+    <nav class="topnav">
+      <a href="#" data-nav="all" class="nav-link active">首页</a>
+      <a href="#" data-nav="design" class="nav-link">设计</a>
+      <a href="#" data-nav="video" class="nav-link">视频剪辑</a>
+      <a href="#" data-nav="about" class="nav-link">关于</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <h1 class="hero-title">作品<span class="hero-dot">集</span></h1>
+    <p class="hero-sub">设计创作 · 视频剪辑 · 视觉呈现</p>
+    <p class="hero-type" id="typewriter"></p>
+  </div>
+</section>
+
+<main class="content">
+  <!-- 分类筛选 -->
+  <div class="filters">
+    <div class="filter-row" id="filter-main">
+      <button class="pill active" data-filter="all">全部</button>
+      <button class="pill" data-filter="design">设计</button>
+      <button class="pill" data-filter="video">视频剪辑</button>
+    </div>
+    <div class="filter-row" id="filter-cat" style="display:none;">
+      <button class="pill active" data-filter="all">全部</button>
+      <button class="pill" data-filter="主图">主图</button>
+      <button class="pill" data-filter="菜单">菜单</button>
+      <button class="pill" data-filter="详情页">详情页</button>
+    </div>
+    <div class="filter-row" id="filter-series" style="display:none;">
+      <button class="pill active" data-filter="all">全部系列</button>
+      <button class="pill" data-filter="冰格">冰格</button>
+      <button class="pill" data-filter="小米">小米</button>
+      <button class="pill" data-filter="小鱼干">小鱼干</button>
+      <button class="pill" data-filter="山楂">山楂</button>
+      <button class="pill" data-filter="枸杞">枸杞</button>
+      <button class="pill" data-filter="礼盒">礼盒</button>
+      <button class="pill" data-filter="美妆">美妆</button>
+      <button class="pill" data-filter="蒜蓉主图">蒜蓉主图</button>
+      <button class="pill" data-filter="裤子">裤子</button>
+      <button class="pill" data-filter="钙片">钙片</button>
+      <button class="pill" data-filter="陈皮">陈皮</button>
+      <button class="pill" data-filter="鹿架-空气凤梨">鹿架·空气凤梨</button>
+      <button class="pill" data-filter="黑蒜">黑蒜</button>
+      <button class="pill" data-filter="鼠标">鼠标</button>
+    </div>
+  </div>
+
+  <!-- 作品网格 -->
+  <section class="grid" id="grid"></section>
+
+  <!-- 关于 -->
+  <section class="about" id="about" style="display:none;">
+    <h2>关于</h2>
+    <p>本作品集收录设计（主图 / 菜单 / 详情页）与视频剪辑两大板块的全部作品，通过纯静态页面本地展示，点击图片可放大查看，长图支持滑动与缩放。</p>
+  </section>
+</main>
+
+<footer class="footer">
+  <p>作品集 © 2026 · 双击本文件即可浏览</p>
+</footer>
+
+<!-- 图片放大模态框 -->
+<div class="modal" id="imgModal">
+  <div class="modal-head">
+    <div class="modal-title" id="modalTitle"></div>
+    <div class="modal-tools">
+      <button class="tool-btn" id="zoomOut" title="缩小">−</button>
+      <button class="tool-btn" id="zoomIn" title="放大">+</button>
+      <span class="zoom-indicator" id="zoomPct">100%</span>
+      <button class="tool-btn tool-close" id="modalClose" title="关闭">✕</button>
+    </div>
+  </div>
+  <div class="modal-body" id="modalBody">
+    <img id="modalImg" src="" alt="">
+  </div>
+  <div class="modal-hint">鼠标滚轮滑动查看 · Shift + 滚轮 或 按钮缩放 · 双击重置 · Esc 关闭</div>
+</div>
+
+<!-- 视频播放模态框（按视频原始尺寸） -->
+<div class="modal" id="videoModal">
+  <div class="modal-head">
+    <div class="modal-title" id="videoModalTitle"></div>
+    <div class="modal-tools">
+      <button class="tool-btn tool-close" id="videoModalClose" title="关闭">✕</button>
+    </div>
+  </div>
+  <div class="modal-body modal-body-center" id="videoModalBody">
+    <video id="videoModalPlayer" controls playsinline></video>
+  </div>
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>
